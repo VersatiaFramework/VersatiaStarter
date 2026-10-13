@@ -13,8 +13,7 @@ dependencies {
 | Exported artifact                                       | What it is                                                     |
 |---------------------------------------------------------|----------------------------------------------------------------|
 | `com.github.marcoral.versatia:VersatiaAPI`              | the framework API: annotations, `VersatiaPlugin`, utilities; brings the Paper API and Kotlin |
-| `com.github.marcoral.versatia:VersatiaModule-Text`      | the [Text module](https://versatiaframework.github.io/VersatiaDocs/docs/modules/text) API |
-| `com.github.marcoral.versatia:VersatiaModule-Messages`  | the [Messages module](https://versatiaframework.github.io/VersatiaDocs/docs/modules/messages) API |
+| `com.github.marcoral.versatia:VersatiaModule-Messages`  | the [Messages module](https://versatiaframework.github.io/VersatiaDocs/docs/modules/messages) API: messages and text with runtime arguments |
 
 The code generator (`VersatiaAPI-ksp`) cannot be exported: it belongs on the `ksp` configuration,
 which Gradle does not fill transitively, so it stays a second line.
@@ -28,8 +27,8 @@ Documentation: [Installation](https://versatiaframework.github.io/VersatiaDocs/d
 
 ## Building
 
-Requires JDK 21 and VersatiaAPI, VersatiaModule-Text and VersatiaModule-Messages in your local
-Maven repository (`./gradlew publishToMavenLocal` in each checkout):
+Requires JDK 21 and VersatiaAPI and VersatiaModule-Messages in your local Maven repository
+(`./gradlew publishToMavenLocal` in each checkout):
 
 ```bash
 ./gradlew publishToMavenLocal
