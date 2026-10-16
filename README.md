@@ -20,8 +20,11 @@ which Gradle does not fill transitively, so it stays a second line.
 
 Nothing from the starter ends up in a plugin's JAR: on the server the classes come from
 VersatiaCore and the module plugins, which the plugin lists under `depend:` as before. The
-starter changes the build only. A plugin that uses no module may keep depending on `VersatiaAPI`
-alone.
+starter exports its artifacts with `compileOnlyApi`, so they are on the plugin's compile classpath
+only, never on its runtime classpath; even a plugin that applies Shadow for a third-party library
+cannot pack a second copy of them. A test that needs them at runtime adds them with
+`testImplementation`. The starter changes the build only. A plugin that uses no module may keep
+depending on `VersatiaAPI` alone.
 
 Documentation: [Installation](https://versatiaframework.github.io/VersatiaDocs/docs/getting-started/installation).
 

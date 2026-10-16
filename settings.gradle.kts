@@ -8,9 +8,10 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
     repositories {
         // The Versatia artifacts are consumed from the local Maven repository (`./gradlew publishToMavenLocal` in each checkout)
-        mavenLocal()
+        mavenLocal { content { includeGroup("com.github.marcoral.versatia") } }
         mavenCentral()
         maven("https://repo.papermc.io/repository/maven-public/")
     }
