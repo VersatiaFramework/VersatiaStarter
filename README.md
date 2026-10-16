@@ -5,7 +5,7 @@ Spring Boot starter: no code, only the artifacts a plugin compiles against.
 
 ```kotlin
 dependencies {
-    implementation("com.github.marcoral.versatia:VersatiaStarter:0.0.1")
+    implementation("com.github.marcoral.versatia:VersatiaStarter:0.0.1") // or libs.versatia.starter with VersatiaCatalog
     ksp("com.github.marcoral.versatia:VersatiaAPI-ksp:0.0.1")
 }
 ```
@@ -30,7 +30,8 @@ Documentation: [Installation](https://versatiaframework.github.io/VersatiaDocs/d
 
 ## Building
 
-Requires JDK 21 and VersatiaAPI and VersatiaModule-Messages in your local Maven repository
+Requires JDK 21 and VersatiaAPI (with VersatiaCatalog, which supplies the versions) and
+VersatiaModule-Messages in your local Maven repository
 (`./gradlew publishToMavenLocal` in each checkout):
 
 ```bash

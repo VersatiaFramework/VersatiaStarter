@@ -15,4 +15,11 @@ dependencyResolutionManagement {
         mavenCentral()
         maven("https://repo.papermc.io/repository/maven-public/")
     }
+
+    // Shared versions and the Versatia artifacts; versatiaVersion is set in gradle.properties
+    versionCatalogs {
+        create("libs") {
+            from("com.github.marcoral.versatia:VersatiaCatalog:${providers.gradleProperty("versatiaVersion").get()}")
+        }
+    }
 }
